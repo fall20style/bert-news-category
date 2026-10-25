@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "news-classifier"
+version = "0.2.0"
+description = "Korean news headline category classifier (ModernBERT + LoRA, Jev-style prompt input)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.2",
+    "transformers>=4.48",
+    "peft>=0.11",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+ui = ["ipywidgets>=8.1", "ipython>=8.0"]
+onnx = ["optimum[onnxruntime]>=1.20"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+news-classifier = "news_classifier.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

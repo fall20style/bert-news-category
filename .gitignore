@@ -1,0 +1,30 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# --- Tooling caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Model / experiment artifacts ---
+artifacts/
+korean_news_jev/
+*.onnx
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# --- Local scratch ---
+.ipynb_checkpoints/
+*.log
+.DS_Store
