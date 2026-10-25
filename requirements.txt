@@ -1,6 +1,7 @@
 # Core runtime (CPU-only machines work as-is; CUDA is used automatically when present)
 torch>=2.2
 transformers>=4.48
+accelerate>=1.1
 peft>=0.11
 numpy>=1.24
 
