@@ -33,11 +33,12 @@ def extract_dataset_source(notebook_path: Path, cell_index: int) -> str:
 
 def build_dataset(source: str) -> list[dict]:
     tree = ast.parse(source)
-    # Drop heavy imports (torch/peft/...) and the trailing file-writing block.
+    # Drop heavy imports (torch/peft/...), the trailing file-writing block and
+    # top-level print/docstring expressions from the legacy cell.
     body = [
         node
         for node in tree.body
-        if not isinstance(node, (ast.Import, ast.ImportFrom, ast.With))
+        if not isinstance(node, (ast.Import, ast.ImportFrom, ast.With, ast.Expr))
     ]
     module = ast.Module(body=body, type_ignores=[])
     namespace: dict = {"json": json}
