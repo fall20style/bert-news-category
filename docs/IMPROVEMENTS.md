@@ -213,5 +213,6 @@
 | `refactor:` | `news_classifier` 패키지 구성 (config/data/metrics/modeling/train/predict/evaluate/cli/ui) |
 | `test:` | 데이터/메트릭/추론/학습 유틸/평가/CLI 테스트 36건 |
 | `docs:` | README, SW 구조, 개선 아이디어 문서화 |
+| `chore:` | 데이터 재생성 스크립트 정리 및 시드 데이터 바이트 단위 일치 |
 
 > 커밋 해시는 `git log --oneline`으로 확인하세요.
